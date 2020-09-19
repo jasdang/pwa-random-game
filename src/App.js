@@ -6,55 +6,19 @@ const AppContainer = styled.div`
   width: 100vw;
   margin: 0;
   background-color: blue;
-  display: flex;
-  flex-direction: column;
-  @media screen and (min-width: 376px) {
-    width: 376px;
-  }
-`;
-
-const Header = styled.div`
-  font-size: 2rem;
-  width: fit-content;
-  margin: 0 auto;
-  padding: 1rem 0;
 `;
 
 const Box = styled.div`
   background: green;
-  width: 80%;
-  margin: 1.5rem auto;
-  font-size: 8rem;
-  position: relative;
-  &:after {
-    padding-bottom: 100%;
-    content: '';
-    display: block;
-  }
-`;
-
-const BoxContent = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 30vh;
+  text-align: center;
 `;
 
 const Flex = styled.div`
   display: flex;
-  width: 80%;
-  margin: 1rem auto 2rem auto;
-  justify-content: center;
 `;
 
-const Button = styled.button`
-  display: block;
-  width: 80%;
-  height: 3rem;
-  margin: auto;
-`;
+const Button = styled.button``;
 
 function App() {
   return (
