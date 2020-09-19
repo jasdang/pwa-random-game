@@ -6,6 +6,8 @@ const AppContainer = styled.div`
   width: 100vw;
   margin: 0 auto;
   background-color: blue;
+  display: flex;
+  flex-direction: column;
   @media screen and (min-width: 376px) {
     width: 376px;
   }
@@ -21,8 +23,7 @@ const Header = styled.div`
 const Box = styled.div`
   background: green;
   width: 80%;
-  margin: 0 auto;
-  margin: 1rem auto;
+  margin: 1.5rem auto;
   font-size: 8rem;
   position: relative;
   &:after {
@@ -44,7 +45,7 @@ const BoxContent = styled.div`
 const Flex = styled.div`
   display: flex;
   width: 80%;
-  margin: 0 auto;
+  margin: 1rem auto 2rem auto;
   justify-content: center;
 `;
 
@@ -52,7 +53,7 @@ const Button = styled.button`
   display: block;
   width: 80%;
   height: 3rem;
-  margin: 1rem auto;
+  margin: auto;
 `;
 
 function App() {
