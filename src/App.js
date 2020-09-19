@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const AppContainer = styled.div`
   height: 100vh;
   width: 100vw;
-  margin: 0 auto;
+  margin: 0;
   background-color: blue;
   display: flex;
   flex-direction: column;
@@ -59,11 +59,9 @@ const Button = styled.button`
 function App() {
   return (
     <AppContainer>
-      <Header>Random Game</Header>
-      <Header>Guessing Game</Header>
-      <Box>
-        <BoxContent>?</BoxContent>
-      </Box>
+      <div>Random Game</div>
+      <div>Guessing Game</div>
+      <Box>?</Box>
       <Flex>
         <p>Your guess </p>
         <input type='number' min='0' max='100' />
