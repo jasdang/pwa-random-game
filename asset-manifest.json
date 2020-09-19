@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/pwa-random-games/static/js/main.99c543b2.chunk.js",
+    "main.js.map": "/pwa-random-games/static/js/main.99c543b2.chunk.js.map",
+    "runtime-main.js": "/pwa-random-games/static/js/runtime-main.d88cc1e6.js",
+    "runtime-main.js.map": "/pwa-random-games/static/js/runtime-main.d88cc1e6.js.map",
+    "static/js/2.a832e867.chunk.js": "/pwa-random-games/static/js/2.a832e867.chunk.js",
+    "static/js/2.a832e867.chunk.js.map": "/pwa-random-games/static/js/2.a832e867.chunk.js.map",
+    "index.html": "/pwa-random-games/index.html",
+    "precache-manifest.542efa82ed70e8bbb427ce1005f6394a.js": "/pwa-random-games/precache-manifest.542efa82ed70e8bbb427ce1005f6394a.js",
+    "service-worker.js": "/pwa-random-games/service-worker.js",
+    "static/js/2.a832e867.chunk.js.LICENSE.txt": "/pwa-random-games/static/js/2.a832e867.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d88cc1e6.js",
+    "static/js/2.a832e867.chunk.js",
+    "static/js/main.99c543b2.chunk.js"
+  ]
+}
