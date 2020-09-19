@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/static/js/main.2f3bfd8e.chunk.js",
-    "main.js.map": "/static/js/main.2f3bfd8e.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.4c0cae51.js",
-    "runtime-main.js.map": "/static/js/runtime-main.4c0cae51.js.map",
-    "static/js/2.b93a4988.chunk.js": "/static/js/2.b93a4988.chunk.js",
-    "static/js/2.b93a4988.chunk.js.map": "/static/js/2.b93a4988.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.8f0d9268fff7868aa9929ed954098ec5.js": "/precache-manifest.8f0d9268fff7868aa9929ed954098ec5.js",
-    "service-worker.js": "/service-worker.js",
-    "static/js/2.b93a4988.chunk.js.LICENSE.txt": "/static/js/2.b93a4988.chunk.js.LICENSE.txt"
+    "main.js": "/pwa-random-game/static/js/main.21bcce15.chunk.js",
+    "main.js.map": "/pwa-random-game/static/js/main.21bcce15.chunk.js.map",
+    "runtime-main.js": "/pwa-random-game/static/js/runtime-main.9f93ef20.js",
+    "runtime-main.js.map": "/pwa-random-game/static/js/runtime-main.9f93ef20.js.map",
+    "static/js/2.961301e7.chunk.js": "/pwa-random-game/static/js/2.961301e7.chunk.js",
+    "static/js/2.961301e7.chunk.js.map": "/pwa-random-game/static/js/2.961301e7.chunk.js.map",
+    "index.html": "/pwa-random-game/index.html",
+    "precache-manifest.c405d01b88f221133f91e012cc131604.js": "/pwa-random-game/precache-manifest.c405d01b88f221133f91e012cc131604.js",
+    "service-worker.js": "/pwa-random-game/service-worker.js",
+    "static/js/2.961301e7.chunk.js.LICENSE.txt": "/pwa-random-game/static/js/2.961301e7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.4c0cae51.js",
-    "static/js/2.b93a4988.chunk.js",
-    "static/js/main.2f3bfd8e.chunk.js"
+    "static/js/runtime-main.9f93ef20.js",
+    "static/js/2.961301e7.chunk.js",
+    "static/js/main.21bcce15.chunk.js"
   ]
 }
