@@ -2,9 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
-  margin: 0;
+  margin: 0 auto;
   background-color: blue;
   @media screen and (min-width: 376px) {
     width: 376px;
@@ -22,7 +24,7 @@ const Box = styled.div`
   background: green;
   width: 80%;
   margin: 0 auto;
-  margin: 1rem auto;
+  margin: 2rem auto;
   font-size: 8rem;
   position: relative;
   &:after {
@@ -44,23 +46,25 @@ const BoxContent = styled.div`
 const Flex = styled.div`
   display: flex;
   width: 80%;
-  margin: 0 auto;
-  justify-content: center;
+  margin: 1rem auto;
+  justify-content: space-around;
 `;
 
 const Button = styled.button`
   display: block;
   width: 80%;
   height: 3rem;
-  margin: 1rem auto;
+  margin: auto auto;
 `;
 
 function App() {
   return (
     <AppContainer>
-      <div>Random Game</div>
-      <div>Guessing Game</div>
-      <Box>?</Box>
+      <Header>Random Game</Header>
+      <Header>Guessing Game</Header>
+      <Box>
+        <BoxContent>?</BoxContent>
+      </Box>
       <Flex>
         <p>Your guess </p>
         <input type='number' min='0' max='100' />
