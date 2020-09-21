@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
+import {getGuessingMin, getGuessingMax} from './selectors';
 
 const AppContainer = styled.div`
   display: flex;
@@ -70,10 +71,10 @@ function App({min, max}) {
       <Box>
         <BoxContent>?</BoxContent>
       </Box>
-      <Flex>Current Range:</Flex>
+      <Flex>Current Range: {`${min} < ? < ${max}`}</Flex>
       <Flex>
         <p>Your guess </p>
-        <input type='number' min='0' max='100' id='guess' />
+        <input type='number' min={min} max={max} id='guess' />
       </Flex>
       <Button onClick={handleSubmit}>Submit</Button>
     </AppContainer>
@@ -81,8 +82,8 @@ function App({min, max}) {
 }
 
 const mapStateToProps = (state) => ({
-  min: state.guessingGame.min,
-  max: state.guessingGame.min,
+  min: getGuessingMin(state),
+  max: getGuessingMax(state),
 });
 
 export default connect(mapStateToProps)(App);
