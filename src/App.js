@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import styled from 'styled-components';
 
 const AppContainer = styled.div`
@@ -57,7 +58,11 @@ const Button = styled.button`
   margin: auto auto;
 `;
 
-function App() {
+function App({min, max}) {
+  const handleSubmit = (evt) => {
+    const guess = document.getElementById('guess').value;
+    // TODO: update min or max;
+  };
   return (
     <AppContainer>
       <Header>Random Game</Header>
@@ -65,13 +70,19 @@ function App() {
       <Box>
         <BoxContent>?</BoxContent>
       </Box>
+      <Flex>Current Range:</Flex>
       <Flex>
         <p>Your guess </p>
-        <input type='number' min='0' max='100' />
+        <input type='number' min='0' max='100' id='guess' />
       </Flex>
-      <Button>Submit</Button>
+      <Button onClick={handleSubmit}>Submit</Button>
     </AppContainer>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  min: state.guessingGame.min,
+  max: state.guessingGame.min,
+});
+
+export default connect(mapStateToProps)(App);

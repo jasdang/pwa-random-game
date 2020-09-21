@@ -4,6 +4,8 @@ import reducers from './reducers';
 const initialStore = {
   guessingGame: {
     result: 99,
+    min: 0,
+    max: 100,
   },
 };
 
