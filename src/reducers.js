@@ -4,7 +4,7 @@ import {updateMin, updateMax} from './actions';
 
 export const initialStore = {
   guessingGame: {
-    result: 99,
+    result: 50,
     min: 0,
     max: 100,
   },

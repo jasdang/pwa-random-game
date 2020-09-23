@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
+import {updateMin, updateMax} from './actions';
 import {getGuessingResult, getGuessingMin, getGuessingMax} from './selectors';
 
 const AppContainer = styled.div`
@@ -59,10 +60,16 @@ const Button = styled.button`
   margin: auto auto;
 `;
 
-function App({result, min, max}) {
+function App({result, min, max, updateMin, updateMax}) {
   const handleSubmit = (evt) => {
     const guess = document.getElementById('guess').value;
-    console.log(result);
+    if (guess > max || guess < min) {
+      alert('Input is outside of current range!');
+    } else if (guess == result) {
+      alert('You won!');
+    } else {
+      guess > result ? updateMax(guess) : updateMin(guess);
+    }
   };
   return (
     <AppContainer>
@@ -87,4 +94,8 @@ const mapStateToProps = (state) => ({
   max: getGuessingMax(state),
 });
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch) => ({
+  updateMin: (guess) => dispatch(updateMin(guess)),
+  updateMax: (guess) => dispatch(updateMax(guess)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(App);
