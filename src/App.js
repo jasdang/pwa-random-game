@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-import {getGuessingMin, getGuessingMax} from './selectors';
+import {getGuessingResult, getGuessingMin, getGuessingMax} from './selectors';
 
 const AppContainer = styled.div`
   display: flex;
@@ -59,10 +59,10 @@ const Button = styled.button`
   margin: auto auto;
 `;
 
-function App({min, max}) {
+function App({result, min, max}) {
   const handleSubmit = (evt) => {
     const guess = document.getElementById('guess').value;
-    // TODO: update min or max;
+    console.log(result);
   };
   return (
     <AppContainer>
@@ -82,6 +82,7 @@ function App({min, max}) {
 }
 
 const mapStateToProps = (state) => ({
+  result: getGuessingResult(state),
   min: getGuessingMin(state),
   max: getGuessingMax(state),
 });
