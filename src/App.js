@@ -62,10 +62,10 @@ const Button = styled.button`
 
 function App({result, min, max, updateMin, updateMax}) {
   const handleSubmit = (evt) => {
-    const guess = document.getElementById('guess').value;
+    const guess = parseInt(document.getElementById('guess').value);
     if (guess > max || guess < min) {
       alert('Input is outside of current range!');
-    } else if (guess == result) {
+    } else if (guess === result) {
       alert('You won!');
     } else {
       guess > result ? updateMax(guess) : updateMin(guess);
