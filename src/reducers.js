@@ -1,12 +1,13 @@
 import {combineReducers} from 'redux';
 import {handleActions} from 'redux-actions';
-import {updateMin, updateMax} from './actions';
+import {updateMin, updateMax, toggleRunning} from './actions';
 
 export const initialStore = {
   guessingGame: {
     result: 50,
     min: 0,
     max: 100,
+    isRunning: true,
   },
 };
 
@@ -22,6 +23,12 @@ const guessingGame = handleActions(
       return {
         ...state,
         max: payload,
+      };
+    },
+    [toggleRunning]: (state) => {
+      return {
+        ...state,
+        isRunning: !state.isRunning,
       };
     },
   },

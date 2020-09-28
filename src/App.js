@@ -1,8 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-import {updateMin, updateMax} from './actions';
-import {getGuessingResult, getGuessingMin, getGuessingMax} from './selectors';
+import {updateMin, updateMax, toggleRunning} from './actions';
+import {
+  getGuessingResult,
+  getGuessingMin,
+  getGuessingMax,
+  getGuessingIsRunning,
+} from './selectors';
 
 const AppContainer = styled.div`
   display: flex;
@@ -60,12 +65,21 @@ const Button = styled.button`
   margin: auto auto;
 `;
 
-function App({result, min, max, updateMin, updateMax}) {
+function App({
+  result,
+  min,
+  max,
+  isRunning,
+  updateMin,
+  updateMax,
+  toggleRunning,
+}) {
   const handleSubmit = (evt) => {
     const guess = parseInt(document.getElementById('guess').value);
     if (guess > max || guess < min) {
       alert('Input is outside of current range!');
     } else if (guess === result) {
+      toggleRunning();
       alert('You won!');
     } else {
       guess > result ? updateMax(guess) : updateMin(guess);
@@ -83,7 +97,9 @@ function App({result, min, max, updateMin, updateMax}) {
         <p>Your guess </p>
         <input type='number' min={min} max={max} id='guess' />
       </Flex>
-      <Button onClick={handleSubmit}>Submit</Button>
+      <Button onClick={handleSubmit}>
+        {isRunning ? 'Submit' : 'Play Again!'}
+      </Button>
     </AppContainer>
   );
 }
@@ -92,10 +108,12 @@ const mapStateToProps = (state) => ({
   result: getGuessingResult(state),
   min: getGuessingMin(state),
   max: getGuessingMax(state),
+  isRunning: getGuessingIsRunning(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
   updateMin: (guess) => dispatch(updateMin(guess)),
   updateMax: (guess) => dispatch(updateMax(guess)),
+  toggleRunning: () => dispatch(toggleRunning()),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);
