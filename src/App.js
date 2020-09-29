@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
-import {updateMin, updateMax, toggleRunning} from './actions';
+import {updateMin, updateMax, toggleRunning, reset} from './actions';
 import {
   getGuessingResult,
   getGuessingMin,
@@ -73,6 +73,7 @@ function App({
   updateMin,
   updateMax,
   toggleRunning,
+  reset,
 }) {
   const handleSubmit = (evt) => {
     const guess = parseInt(document.getElementById('guess').value);
@@ -84,6 +85,9 @@ function App({
     } else {
       guess > result ? updateMax(guess) : updateMin(guess);
     }
+  };
+  const handleReset = () => {
+    reset();
   };
   return (
     <AppContainer>
@@ -97,7 +101,7 @@ function App({
         <p>Your guess </p>
         <input type='number' min={min} max={max} id='guess' />
       </Flex>
-      <Button onClick={handleSubmit}>
+      <Button onClick={isRunning ? handleSubmit : handleReset}>
         {isRunning ? 'Submit' : 'Play Again!'}
       </Button>
     </AppContainer>
@@ -115,5 +119,6 @@ const mapDispatchToProps = (dispatch) => ({
   updateMin: (guess) => dispatch(updateMin(guess)),
   updateMax: (guess) => dispatch(updateMax(guess)),
   toggleRunning: () => dispatch(toggleRunning()),
+  reset: () => dispatch(reset()),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,7 +1,8 @@
 import {createActions} from 'redux-actions';
 
-export const {updateMin, updateMax, toggleRunning} = createActions(
+export const {updateMin, updateMax, toggleRunning, reset} = createActions(
   'UPDATE_MIN',
   'UPDATE_MAX',
-  'TOGGLE_RUNNING'
+  'TOGGLE_RUNNING',
+  'RESET'
 );
